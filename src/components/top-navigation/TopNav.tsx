@@ -5,7 +5,7 @@ const TopNav = () => (
     <ul className="flex justify-between gap-4">
       <div className="flex gap-4">
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/">Gallery</Link>
         </li>
         <li>
           <Link href="/about">About</Link>
