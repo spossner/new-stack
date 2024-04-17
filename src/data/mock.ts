@@ -9,4 +9,5 @@ const MOCK_IMAGES = [
 export const images = MOCK_IMAGES.map((src, index) => ({
   id: index,
   src,
+  name: `Image ${index + 1}`,
 }));
