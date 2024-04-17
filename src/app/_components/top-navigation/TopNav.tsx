@@ -1,3 +1,4 @@
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 const TopNav = () => (
@@ -12,7 +13,12 @@ const TopNav = () => (
         </li>
       </div>
       <li>
-        <Link href="/signin">Sign In</Link>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </li>
     </ul>
   </nav>

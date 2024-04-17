@@ -1,7 +1,8 @@
-import "~/styles/globals.css";
-
+import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
-import TopNav from "~/components/top-navigation/TopNav";
+
+import "~/styles/globals.css";
+import TopNav from "./_components/top-navigation/TopNav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,11 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
-      <body className={`font-sans ${inter.variable}`}>
-        <TopNav />
-        <main>{children}</main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="de">
+        <body className={`font-sans ${inter.variable}`}>
+          <TopNav />
+          <main>{children}</main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
